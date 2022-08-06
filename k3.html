@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <title></title>
+    <style>
+    div#img{
+        width: 50px;
+        height: 50px;
+        background-image:url("./img/menu2.png");
+        position:fixed;
+    }
+    #inmenu{
+      list-style: none;
+      padding: 50px 0 0 60px;
+    }
+
+    #inmenu>li{
+      line-height: 200%;
+      font-size: 18px;
+    }
+
+    #inmenu a{
+      color: #FFFFFF;
+      text-decoration: none;
+      etter-spacing: -10px;
+    }
+
+    #inmenu a:hover{
+      text-decoration: underline;
+    }
+
+    #inmenu h1{
+      font-size: 30px;
+      padding: 0 0 30px 0;
+    }
+
+
+
+    div#menu{
+        /*
+            absolute 로 하시면 화면 전체를 사용할텐데,
+            부모태그에 position relative주시고  그 부모 크기 설정해두시면 그 공간만 차지해요
+        */
+        position: fixed;
+        opacity:0;
+        /*처음에는 width를 0 으로 해놔야해요! */
+        width: 0%;
+        height: 100%;
+        background-color: black;
+
+        /* transition을 줘야 뚝뚝 안끊기고 자연스럽게 넓어져요 */
+        /* 100ms는 0.1초라고 생각하세요 800ms => 0.8초 */
+        transition: 800ms;
+    }
+
+    /* 마우스가 올라가면 width가 50%가 되면서 샤라락 */
+    div#img:hover > div#menu{
+        /* 원하시는 % 만큼 넣으세요! 아마 px단위도 될거에요*/
+        width: 20%;
+        opacity:1;
+    }
+    </style>
+  </head>
+  <body>
+
+            <div id="img">
+
+
+                <div id="menu">
+                  <ul id="inmenu">
+                    <h1></h1>
+                    <li><a href="index.html">Main </a></li>
+                    <br><br>
+                    <li><a href="k1.html">서체꼴 이야기</a></li>
+                    <li><a href="k2.html">자간 행간, 사이 사이</a></li>
+                    <li><a href="k3.html">크고 굵고, 작고 얇은 </a></li>
+                    <br><br>
+                    <li class="go"><a href="e1.html">Helvetica</a></li>
+                    <br><br>
+                    <li class="let"><a href="color.html">형태와 컬러</a></li>
+                    <li class="let"><a href="image.html">실사의 위력</a></li>
+                  </ul>
+                </div>
+            </div>
+            <img src="./img/noto_size.jpg"  width="1680px">
+  </body>
+</html>
